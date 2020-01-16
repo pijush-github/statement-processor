@@ -1,0 +1,16 @@
+<records>
+<record reference="187997">
+<accountNumber>NL91RABO0315273637</accountNumber>
+<description>Clothes for Rik King</description>
+<startBalance>57.6</startBalance>
+<mutation>-32.98</mutation>
+<endBalance>24.62</endBalance>
+</record>
+<record reference="154270">
+<accountNumber>NL56RABO0149876948</accountNumber>
+<description>Candy for Peter de Vries</description>
+<startBalance>5429</startBalance>
+<mutation>-939</mutation>
+<endBalance>6368</endBalance>
+</record>
+</records>
