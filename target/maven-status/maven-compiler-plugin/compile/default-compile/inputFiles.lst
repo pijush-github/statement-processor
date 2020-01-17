@@ -8,7 +8,10 @@ D:\Development\github-workspace\statment-processor\statement-processor\src\main\
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\error\GlobalExceptionHandlerAdvice.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\bean\TransactionRecord.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\config\StatementProcessorConfigurer.java
+D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\error\UnrecognizedStatementTypeException.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\bean\FailedTransactionReport.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\util\StatementReader.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\config\StatementProcessorInitializer.java
+D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\error\CustomerStatementProcessingException.java
+D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\error\TransactionsNotFoundException.java
 D:\Development\github-workspace\statment-processor\statement-processor\src\main\java\com\rabo\customer\statement\processor\service\StatementProcessorService.java

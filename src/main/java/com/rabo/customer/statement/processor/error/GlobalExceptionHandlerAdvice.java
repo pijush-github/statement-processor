@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -22,6 +23,11 @@ public class GlobalExceptionHandlerAdvice extends ResponseEntityExceptionHandler
 	@ExceptionHandler(MultipartException.class)
 	public ResponseEntity<String> handleFileUploadException(MultipartException inMpartEx) {
 		return error(HttpStatus.BAD_REQUEST, inMpartEx);
+	}
+	
+	@ExceptionHandler(MaxUploadSizeExceededException.class)
+	public ResponseEntity<String> handleMaxFileUploadException(MaxUploadSizeExceededException inMaxSizeEx) {
+		return error(HttpStatus.BAD_REQUEST, inMaxSizeEx);
 	}
 	
 	

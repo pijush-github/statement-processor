@@ -1,4 +1,6 @@
+com\rabo\customer\statement\processor\error\CustomerStatementProcessingException.class
 com\rabo\customer\statement\processor\config\StatementProcessorInitializer.class
+com\rabo\customer\statement\processor\error\TransactionsNotFoundException.class
 com\rabo\customer\statement\processor\util\MonthlyStatementParser.class
 com\rabo\customer\statement\processor\error\GlobalExceptionHandlerAdvice.class
 com\rabo\customer\statement\processor\util\StatementReader.class
@@ -7,6 +9,7 @@ com\rabo\customer\statement\processor\aid\StatementProcessingConstatnts.class
 com\rabo\customer\statement\processor\config\StatementProcessorConfigurer.class
 com\rabo\customer\statement\processor\util\CSVStatementReader.class
 com\rabo\customer\statement\processor\bean\FailedTransactionReport.class
+com\rabo\customer\statement\processor\error\UnrecognizedStatementTypeException.class
 com\rabo\customer\statement\processor\bean\TransactionRecord.class
 com\rabo\customer\statement\processor\service\StatementProcessorService.class
 com\rabo\customer\statement\processor\bean\FailedTransactionInfo.class
