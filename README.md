@@ -23,4 +23,20 @@ amount. This service respond back the message having all failed transaction & du
 3. Run the app using maven. Execute below command from the project root directory (statement-processor)
 
 	mvn jetty:run
-	That's it! The service can be accessed at http://localhost:8080/statement-processor/monthly/statement.
+
+	That's it! The service can be accessed through Postman client with followings -
+	Url : http://localhost:8080/statement-processor/monthly/statement.
+	form-data : key=customerStatement value=<browse_input_file> 
+	(sample files records.csv, records.xml can found under project's test/resources)
+	
+	SAMPLE OUTPUT:
+	{
+    		"failedTransactions": [
+		{
+		    "transactionReference": 154270,
+		    "transactionDescription": "Candy for Peter de Vries"
+		}
+    		],
+    		"noumberOfFailedTransactions": "1",
+    		"processedStatementMessage": "All 2 transactions are validated from uploaded statement records.xml. No duplicate 			transactions were available."
+	}
