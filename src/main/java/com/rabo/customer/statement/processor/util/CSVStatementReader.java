@@ -14,13 +14,14 @@ import org.slf4j.LoggerFactory;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.rabo.customer.statement.processor.bean.TransactionRecord;
+import com.rabo.customer.statement.processor.error.CustomerStatementProcessingException;
 
 public class CSVStatementReader implements StatementReader {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CSVStatementReader.class);
 	
 	@Override
-	public List<TransactionRecord> read(final InputStream inFileInput) throws Exception  {
+	public List<TransactionRecord> read(final InputStream inFileInput) throws CustomerStatementProcessingException  {
 		List<TransactionRecord> theTransactionRecords = new ArrayList<>();
 		try {
 			BufferedReader theBufferedReader = new BufferedReader(new InputStreamReader(inFileInput,"UTF-8"));
@@ -31,8 +32,8 @@ public class CSVStatementReader implements StatementReader {
 			}
 		
 		} catch (final IOException ex) {
-			LOGGER.error("Issue with parser configuration or file parsing. Original error is :", ex);
-			throw new Exception(ex);
+			LOGGER.error("Error occurred at CSVStatementReader.read(): {0}", ex);
+			throw new CustomerStatementProcessingException("Issue with parser configuration or file parsing.");
 		}
 		return theTransactionRecords;
 	}

@@ -59,7 +59,7 @@ public class StatementProcessingControllerTest {
 	public void testUploadMonthlyStatementsAsCSVFile() throws Exception {
 		ResultMatcher ok = MockMvcResultMatchers.status().isOk();
 		MockMultipartFile mockMultipartFile = new MockMultipartFile("customerStatement", "records.csv", "multipart/form-data", isCSV); 
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/transactional/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
         MvcResult result = this.mockMvc.perform(builder).andExpect(ok).andReturn();
         Assert.assertEquals(200, result.getResponse().getStatus());
         Assert.assertNotNull(result.getResponse().getContentAsString());        
@@ -69,7 +69,7 @@ public class StatementProcessingControllerTest {
 	public void testUploadMonthlyStatementsAsXMLFile() throws Exception {
 		ResultMatcher ok = MockMvcResultMatchers.status().isOk();
 		MockMultipartFile mockMultipartFile = new MockMultipartFile("customerStatement", "records.xml", "multipart/form-data", isXML); 
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/transactional/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
         MvcResult result = this.mockMvc.perform(builder).andExpect(ok).andReturn();
         Assert.assertEquals(200, result.getResponse().getStatus());
         Assert.assertNotNull(result.getResponse().getContentAsString());        
@@ -79,7 +79,7 @@ public class StatementProcessingControllerTest {
 	public void testUploadMonthlyStatementsAsNullFile() throws Exception {
 		ResultMatcher badRequest = MockMvcResultMatchers.status().isBadRequest();
 		MockMultipartFile mockMultipartFile = new MockMultipartFile("customerStatement", "empty.xml", "multipart/form-data", isEmptyXML); 
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/transactional/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
         MvcResult result = this.mockMvc.perform(builder).andExpect(badRequest).andReturn();
         Assert.assertEquals(400, result.getResponse().getStatus());
         Assert.assertNotNull(result.getResponse().getContentAsString());        
@@ -89,7 +89,7 @@ public class StatementProcessingControllerTest {
 	public void testUploadMonthlyStatementsAsUnknownType() throws Exception {
 		ResultMatcher badRequest = MockMvcResultMatchers.status().isBadRequest();
 		MockMultipartFile mockMultipartFile = new MockMultipartFile("customerStatement", "records.txt", "multipart/form-data", isTXT); 
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.fileUpload("/transactional/monthly/statement").file(mockMultipartFile).contentType(MediaType.MULTIPART_FORM_DATA);
         MvcResult result = this.mockMvc.perform(builder).andExpect(badRequest).andReturn();
         Assert.assertEquals(400, result.getResponse().getStatus());
         Assert.assertNotNull(result.getResponse().getContentAsString());        

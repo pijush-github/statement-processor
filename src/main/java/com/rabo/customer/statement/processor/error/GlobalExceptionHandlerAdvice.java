@@ -20,6 +20,16 @@ public class GlobalExceptionHandlerAdvice extends ResponseEntityExceptionHandler
 		return error(HttpStatus.INTERNAL_SERVER_ERROR, inEx);
 	}
 	
+	@ExceptionHandler(ReportNotFoundException.class)
+	public ResponseEntity<String> handleReportNotFoundException(ReportNotFoundException inEx) {
+		return error(HttpStatus.INTERNAL_SERVER_ERROR, inEx);
+	}
+	
+	@ExceptionHandler(ReportStorageException.class)
+	public ResponseEntity<String> handleReportStorageException(ReportStorageException inEx) {
+		return error(HttpStatus.INTERNAL_SERVER_ERROR, inEx);
+	}
+	
 	@ExceptionHandler(MultipartException.class)
 	public ResponseEntity<String> handleFileUploadException(MultipartException inMpartEx) {
 		return error(HttpStatus.BAD_REQUEST, inMpartEx);

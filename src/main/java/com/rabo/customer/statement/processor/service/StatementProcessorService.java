@@ -1,5 +1,8 @@
 package com.rabo.customer.statement.processor.service;
 
+import static com.rabo.customer.statement.processor.aid.StatementProcessingConstatnts.CSV_FILE_EXTENSION;
+import static com.rabo.customer.statement.processor.aid.StatementProcessingConstatnts.XML_FILE_EXTENSION;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -22,9 +25,6 @@ import com.rabo.customer.statement.processor.bean.TransactionRecord;
 import com.rabo.customer.statement.processor.util.CSVStatementReader;
 import com.rabo.customer.statement.processor.util.MonthlyStatementParser;
 import com.rabo.customer.statement.processor.util.XMLStatementReader;
-
-import static com.rabo.customer.statement.processor.aid.StatementProcessingConstatnts.CSV_FILE_EXTENSION;
-import static com.rabo.customer.statement.processor.aid.StatementProcessingConstatnts.XML_FILE_EXTENSION;
 
 @Service
 public class StatementProcessorService {
@@ -94,5 +94,4 @@ public class StatementProcessorService {
 			return false;
 		}
 	}
-
 }

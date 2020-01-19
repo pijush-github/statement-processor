@@ -14,13 +14,14 @@ import org.slf4j.LoggerFactory;
 
 import com.rabo.customer.statement.processor.bean.TransactionRecord;
 import com.rabo.customer.statement.processor.bean.TransactionRecords;
+import com.rabo.customer.statement.processor.error.CustomerStatementProcessingException;
 
 public class XMLStatementReader implements StatementReader {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(XMLStatementReader.class);
 	
 	@Override
-	public List<TransactionRecord> read(final InputStream inFileInput) throws Exception {
+	public List<TransactionRecord> read(final InputStream inFileInput) throws CustomerStatementProcessingException {
 		List<TransactionRecord> theTransactionRecords = new ArrayList<>();
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(TransactionRecords.class);
@@ -37,8 +38,8 @@ public class XMLStatementReader implements StatementReader {
 				theTransactionRecords.add(theTxnRecord);			
 			}
 		} catch (final JAXBException ex) {
-			LOGGER.error("Issue with parser configuration or file parsing. Original error is :", ex);
-			throw new Exception(ex);
+			LOGGER.error("Error occurred at XMLStatementReader.read(): {0}", ex);
+			throw new CustomerStatementProcessingException("Issue with parser configuration or file parsing.");
 		}
 		return theTransactionRecords;
 	}

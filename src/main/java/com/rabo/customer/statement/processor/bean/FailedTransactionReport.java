@@ -7,6 +7,7 @@ public class FailedTransactionReport {
 	private List<FailedTransactionInfo> failedTransactions;
 	private String noumberOfFailedTransactions;
 	private String processedStatementMessage;
+	private Long transactionProcessingReportId;
 		
 	/**
 	 * @return the failedTransactions
@@ -43,5 +44,17 @@ public class FailedTransactionReport {
 	 */
 	public void setProcessedStatementMessage(String processedStatementMessage) {
 		this.processedStatementMessage = processedStatementMessage;
+	}
+	/**
+	 * @return the transactionProcessingReportId
+	 */
+	public Long getTransactionProcessingReportId() {
+		return transactionProcessingReportId;
+	}
+	/**
+	 * @param transactionProcessingReportId the transactionProcessingReportId to set
+	 */
+	public void setTransactionProcessingReportId(Long transactionProcessingReportId) {
+		this.transactionProcessingReportId = transactionProcessingReportId;
 	}
 }

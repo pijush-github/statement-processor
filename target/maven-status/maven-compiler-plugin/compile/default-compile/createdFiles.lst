@@ -3,6 +3,7 @@ com\rabo\customer\statement\processor\config\StatementProcessorInitializer.class
 com\rabo\customer\statement\processor\error\TransactionsNotFoundException.class
 com\rabo\customer\statement\processor\util\MonthlyStatementParser.class
 com\rabo\customer\statement\processor\error\GlobalExceptionHandlerAdvice.class
+com\rabo\customer\statement\processor\error\ReportStorageException.class
 com\rabo\customer\statement\processor\util\StatementReader.class
 com\rabo\customer\statement\processor\util\XMLStatementReader.class
 com\rabo\customer\statement\processor\aid\StatementProcessingConstatnts.class
@@ -12,6 +13,9 @@ com\rabo\customer\statement\processor\bean\FailedTransactionReport.class
 com\rabo\customer\statement\processor\error\UnrecognizedStatementTypeException.class
 com\rabo\customer\statement\processor\bean\TransactionRecord.class
 com\rabo\customer\statement\processor\service\StatementProcessorService.class
+com\rabo\customer\statement\processor\bean\Report.class
+com\rabo\customer\statement\processor\service\StatementReportService.class
 com\rabo\customer\statement\processor\bean\FailedTransactionInfo.class
 com\rabo\customer\statement\processor\rest\StatementProcessingController.class
 com\rabo\customer\statement\processor\bean\TransactionRecords.class
+com\rabo\customer\statement\processor\error\ReportNotFoundException.class
