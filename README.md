@@ -25,7 +25,7 @@ amount. This service respond back the message having all failed transaction & du
 	mvn jetty:run
 
 	That's it! The service can be accessed through Postman client with followings -
-	Url : http://localhost:8080/statement-processor/monthly/statement.
+	Url : http://localhost:8080/statement-processor/transactional/monthly/statement.
 	form-data : key=customerStatement value=<browse_input_file> 
 	(sample files records.csv, records.xml can found under project's test/resources)
 	
